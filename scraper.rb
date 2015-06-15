@@ -33,9 +33,10 @@ persons = json_at(PERSONS_URL)
 persons.each do |mp|
   data = { 
     id: mp[:member][:congress_id],
-    name: "#{mp[:member][:name]}, #{mp[:member][:second_name]}",
-    family_name: mp[:member][:name],
-    given_name: mp[:member][:second_name],
+    name: "#{mp[:member][:name]} #{mp[:member][:second_name].split(' ').first}",
+    sort_name: "#{mp[:member][:second_name]}, #{mp[:member][:name]}",
+    given_name: mp[:member][:name],
+    family_name: mp[:member][:second_name],
     party: party.(mp[:party]),
     party_id: mp[:party].split('/').last,
     area: mp[:member][:division],
