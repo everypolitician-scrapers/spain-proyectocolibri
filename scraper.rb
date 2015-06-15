@@ -5,10 +5,10 @@ require 'scraperwiki'
 require 'json'
 require 'open-uri'
 
-require 'colorize'
-require 'pry'
-require 'open-uri/cached'
-OpenURI::Cache.cache_path = '.cache'
+# require 'colorize'
+# require 'pry'
+# require 'open-uri/cached'
+# OpenURI::Cache.cache_path = '.cache'
 
 def json_at(url)
   JSON.parse(open(url).read, symbolize_names: true)[:objects]
