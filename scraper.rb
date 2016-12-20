@@ -14,13 +14,6 @@ def json_at(url)
   JSON.parse(open(url).read, symbolize_names: true)[:objects]
 end
 
-term = {
-  id: 10,
-  name: 'X Legislatura',
-  start_date: '2011-11-28',
-}
-ScraperWiki.save_sqlite([:id], term, 'terms')
-
 PARTIES_URL = 'http://proyectocolibri.es/api/v1/party/'
 PERSONS_URL = 'http://proyectocolibri.es/api/v1/groupmember/'
 
